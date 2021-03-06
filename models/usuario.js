@@ -9,7 +9,12 @@ const UsuarioSchema = Schema({
     },
     password: { type: String, required: [true, 'El password es obligatorio.'] },
     img: { type: String },
-    rol: { type: String, emun: ['ADMIN_ROLE', 'USER_ROLE'], required: true },
+    rol: {
+        type: String,
+        default: 'USER_ROLE',
+        emun: ['ADMIN_ROLE', 'USER_ROLE'],
+        required: true,
+    },
     estado: { type: Boolean, default: true },
     google: { type: Boolean, default: false },
 });
